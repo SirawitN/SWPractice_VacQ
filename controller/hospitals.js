@@ -34,8 +34,13 @@ exports.getHospital = async (req, res, next) => {
 //@route    POST /api/v1/hospitals
 //@access   Private
 exports.createHospital = async (req, res, next) => {
-  const hospital = await Hospital.create(req.body);
-  res.status(201).json({ success: true, data: hospital });
+  try {
+    const hospital = await Hospital.create(req.body);
+
+    res.status(201).json({ success: true, data: hospital });
+  } catch (error) {
+    res.status(400).json({ success: false });
+  }
 };
 
 //@desc     Update a hospital
