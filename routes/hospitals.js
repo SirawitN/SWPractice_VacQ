@@ -10,7 +10,7 @@ const {
   deleteHospital,
 } = require("../controller/hospitals");
 
-//Include other resource routers
+//Re-route into other resource routers
 const appointmentRouter = require("./appointments");
 router.use("/:hospitalId/appointments", appointmentRouter);
 
