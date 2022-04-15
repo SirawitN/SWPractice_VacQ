@@ -8,7 +8,7 @@ const {
   createHospital,
   updateHospital,
   deleteHospital,
-  getVacCenters,
+  // getVacCenters,
 } = require("../controller/hospitals");
 
 //Re-route into other resource routers
@@ -20,7 +20,7 @@ router
   .get(getHospitals)
   .post(protect, authorize("admin"), createHospital);
 
-router.route("/vacCenters").get(getVacCenters);
+// router.route("/vacCenters").get(getVacCenters);
 
 router
   .route("/:id")
